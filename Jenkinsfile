@@ -2,13 +2,13 @@ pipeline {
     agent any 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('docker-hub-credentials')
-        IMAGE_NAME = 'kaushik021/docker-CICD'
+        IMAGE_NAME = 'kaushik021/docker-cicd'
     }
     stages{
         stage('checkout source code'){
             steps{
                 echo 'pulling source code from github'
-                git branch: 'main', url: 'https://github.com/B-Kaushik21/docker-CICD.git'
+                git branch: 'main', url: 'https://github.com/B-Kaushik21/docker-cicd.git'
             }
         }
         stage('build docker image'){
